@@ -100,9 +100,8 @@ export class HomePage implements OnInit {
     const ui = new shaka.ui.Overlay(this.player, container, video)
  
     const config = {
-      controlPanelElements: ["time_and_duration", "spacer", "volume", "fullscreen", "overflow_menu"],
-      overflowMenuButtons: ["quality", "playback_rate", "picture_in_picture"],
-      addBigPlayButton: true
+      controlPanelElements: ["play_pause","time_and_duration", "spacer", "mute", "volume", "cast", "fullscreen", "overflow_menu"],
+      overflowMenuButtons: ["quality", "playback_rate", "picture_in_picture"]
     }
     ui.configure(config);
 
