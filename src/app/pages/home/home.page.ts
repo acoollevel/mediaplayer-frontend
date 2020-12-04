@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from '@uoa/auth';
 import { environment } from '../../../environments/environment';
+import { keybinds } from './plus/keybinds.js';
 
 declare var ga;
 
@@ -98,6 +99,8 @@ export class HomePage implements OnInit {
     const container = document.getElementById('video-container');
     this.player = new shaka.Player(video);
     const ui = new shaka.ui.Overlay(this.player, container, video)
+
+    document.addEventListener('keydown', function(event) {keybinds(event, video)});
  
     const config = {
       controlPanelElements: ["play_pause","time_and_duration", "spacer", "mute", "volume", "cast", "fullscreen", "overflow_menu"],

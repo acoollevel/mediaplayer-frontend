@@ -13,3 +13,50 @@ video {
 	bottom: 90px!important;
 	right: 40px!important;
 }
+
+#mpp-action-popup {
+  display: block;
+  margin: auto;
+  width: 190px;
+  position: absolute;
+  top: 20px;
+  left: calc(50% - 90px);
+  z-index: 1;
+  background-color: rgba(0,0,0,0.7);
+  color: white;
+  padding: 10px;
+  padding-top: 5px;
+  text-align: center;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 39px;
+  opacity: 0;
+  animation-name: fadeout;
+  animation-duration: 0.5s;
+}
+
+#mpp-action-popup .material-icons {
+  font-size: 50px;
+  width: 100%;
+}
+
+#mpp-action-popup p {
+  margin: 0;
+  position: relative;
+  top: -7px;
+  font-family: Roboto-Regular,Roboto,sans-serif;
+}
+
+@keyframes fadeout {
+  from {
+      opacity: 1;
+  }
+
+  80% {
+      opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
