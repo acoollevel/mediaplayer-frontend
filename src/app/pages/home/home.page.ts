@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { LoginService } from '@uoa/auth';
 import { environment } from '../../../environments/environment';
 import { keybinds } from './plus/keybinds.js';
+import { screenshot } from './plus/screenshot.js';
 
 declare var ga;
 
@@ -102,8 +103,10 @@ export class HomePage implements OnInit {
 
     document.addEventListener('keydown', function(event) {keybinds(event, video)});
  
+    shaka.ui.Controls.registerElement('screenshot', screenshot);
+      
     const config = {
-      controlPanelElements: ["play_pause","time_and_duration", "spacer", "mute", "volume", "cast", "fullscreen", "overflow_menu"],
+      controlPanelElements: ["play_pause", "time_and_duration", "spacer", "mute", "volume", "cast", "screenshot", "fullscreen", "overflow_menu"],
       overflowMenuButtons: ["quality", "playback_rate", "picture_in_picture"]
     }
     ui.configure(config);
