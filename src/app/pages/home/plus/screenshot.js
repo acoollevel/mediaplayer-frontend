@@ -17,6 +17,7 @@ class Screenshot extends shaka.ui.Element {
         // The actual button that will be displayed
         this.button_ = document.createElement('button');
         this.button_.classList.add('material-icons');
+        this.button_.setAttribute('data-tippy-content', 'Screenshot');
         this.button_.textContent = 'wallpaper';
         
         this.parent.appendChild(this.button_);

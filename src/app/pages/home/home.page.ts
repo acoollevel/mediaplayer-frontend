@@ -6,6 +6,8 @@ import { LoginService } from '@uoa/auth';
 import { environment } from '../../../environments/environment';
 import { keybinds } from './plus/keybinds.js';
 import { screenshot } from './plus/screenshot.js';
+import tippy from 'tippy.js';
+import 'tippy.js/dist/tippy.css';
 
 declare var ga;
 
@@ -104,12 +106,27 @@ export class HomePage implements OnInit {
     document.addEventListener('keydown', function(event) {keybinds(event, video)});
  
     shaka.ui.Controls.registerElement('screenshot', screenshot);
-      
+     
+    tippy.setDefaultProps({
+      theme: 'material',
+      animation: 'scale',
+      duration: [100, 80],
+      arrow: false,
+      allowHTML: true,
+      interactive: true,
+    });
+  
     const config = {
       controlPanelElements: ["play_pause", "time_and_duration", "spacer", "mute", "volume", "cast", "screenshot", "fullscreen", "overflow_menu"],
       overflowMenuButtons: ["quality", "playback_rate", "picture_in_picture"]
     }
     ui.configure(config);
+
+    tippy('.shaka-mute-button', {content: 'Mute [M]'});
+    tippy('.shaka-small-play-button', {content: 'Play/Pause [K]'});
+    tippy('.shaka-fullscreen-button', {content: 'Fullscreen [F]',});
+    tippy('.shaka-overflow-menu-button', {content: 'More',});
+    tippy('[data-tippy-content]');
 
     // Send cookies
     this.player.getNetworkingEngine().registerRequestFilter(function(request_type, request) {

@@ -30,6 +30,7 @@
     "crypto-js": "^4.0.0",
     "ngx-take-until-destroy": "^5.4.0",
     "rxjs": "~6.5.1",
+    "tippy.js": "^6.2.7",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
   },
@@ -54,7 +55,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.15.0",
-    "typescript": "~3.4.3"
+    "typescript": "^3.5.3"
   },
   "description": "An Ionic project"
 }
